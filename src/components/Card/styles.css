@@ -1,0 +1,5 @@
+.card {
+    @apply overflow-auto;
+    @apply flex;
+    @apply flex-col;
+}
