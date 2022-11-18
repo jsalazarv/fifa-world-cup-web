@@ -1,0 +1,37 @@
+.info-card {
+    @apply bg-white;
+    @apply shadow-md;
+    @apply my-4;
+}
+
+.info-card__container {
+    @apply p-4;
+}
+
+.info-card__top-actions {
+    @apply flex;
+    @apply justify-end;
+    @apply text-xs;
+    @apply text-gray-400;
+}
+
+.info-card__bottom-actions {
+    @apply flex;
+    @apply justify-between;
+    @apply items-end;
+    @apply text-xs;
+    @apply text-gray-400;
+}
+
+.info-card__body {
+    @apply flex;
+    @apply justify-center;
+    @apply my-5 lg:my-0;
+    @apply items-center;
+    @apply gap-7;
+}
+
+.team-container {
+    @apply text-sm;
+    @apply text-gray-500;
+}
