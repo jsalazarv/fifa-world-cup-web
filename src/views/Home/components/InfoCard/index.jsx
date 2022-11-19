@@ -2,7 +2,14 @@ import { Card } from '../../../../components/Card/index.jsx';
 import './styles.css';
 import { Avatar } from '../../../../components/Avatar';
 
-export const InfoCard = () => {
+export const InfoCard = ({ data = {} }) => {
+  const pictureFormatter = (country) => {
+    return country?.pictureUrl.replace(
+      /flags-{format}-{size}/i,
+      `flags-sq-4/${country?.countryId}?tx=c_fill,g_auto,q_auto,w_50`,
+    );
+  };
+
   return (
     <Card className="info-card" type="rounded">
       <div className="info-card__container">
@@ -12,9 +19,9 @@ export const InfoCard = () => {
         <div className="info-card__body">
           <div className="team-container">
             <Avatar size="medium" type="rounded">
-              <img src="/favicon.ico" alt="" />
+              <img src={pictureFormatter(data.home)} alt="" />
             </Avatar>
-            <p className="mt-2">Team 1</p>
+            <p className="mt-2">{data.home?.name}</p>
           </div>
           <div className="text-center">
             <p className="font-bold">VS</p>
@@ -24,14 +31,14 @@ export const InfoCard = () => {
           </div>
           <div className="team-container">
             <Avatar size="medium" type="rounded">
-              <img src="/favicon.ico" alt="" />
+              <img src={pictureFormatter(data.away)} alt="" />
             </Avatar>
-            <p className="mt-2">Team 2</p>
+            <p className="mt-2">{data.away?.name}</p>
           </div>
         </div>
         <div className="info-card__bottom-actions">
           <p>GROUP A</p>
-          <p>20:00</p>
+          <p>{data.localDate}</p>
         </div>
       </div>
     </Card>

@@ -34,4 +34,7 @@
 .team-container {
     @apply text-sm;
     @apply text-gray-500;
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
 }
