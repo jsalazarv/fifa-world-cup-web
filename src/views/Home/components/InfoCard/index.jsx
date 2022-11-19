@@ -18,6 +18,9 @@ export const InfoCard = ({ data = {} }) => {
         </div>
         <div className="info-card__body">
           <div className="team-container">
+            <div className="goals-container">
+              <h2>0</h2>
+            </div>
             <Avatar size="medium" type="rounded">
               <img src={pictureFormatter(data.home)} alt="" />
             </Avatar>
@@ -30,6 +33,9 @@ export const InfoCard = ({ data = {} }) => {
             </p>
           </div>
           <div className="team-container">
+            <div className="goals-container">
+              <h2>2</h2>
+            </div>
             <Avatar size="medium" type="rounded">
               <img src={pictureFormatter(data.away)} alt="" />
             </Avatar>
