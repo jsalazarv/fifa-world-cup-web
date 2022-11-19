@@ -1,6 +1,6 @@
 import { Card } from '../../../../components/Card/index.jsx';
-import './styles.css';
 import { Avatar } from '../../../../components/Avatar';
+import './styles.css';
 
 export const InfoCard = ({ data = {} }) => {
   const pictureFormatter = (country) => {
@@ -10,11 +10,17 @@ export const InfoCard = ({ data = {} }) => {
     );
   };
 
+  const onOpenDialog = () => {
+    console.log('OPEN DIALOG');
+  };
+
   return (
     <Card className="info-card" type="rounded">
       <div className="info-card__container">
         <div className="info-card__top-actions">
-          <button className="text-purple-600">Go</button>
+          <button className="text-purple-600" onClick={() => onOpenDialog()}>
+            Go
+          </button>
         </div>
         <div className="info-card__body">
           <div className="team-container">
@@ -24,7 +30,7 @@ export const InfoCard = ({ data = {} }) => {
             <Avatar size="medium" type="rounded">
               <img src={pictureFormatter(data.home)} alt="" />
             </Avatar>
-            <p className="mt-2">{data.home?.name}</p>
+            <p className="mt-2">{data.home?.countryId}</p>
           </div>
           <div className="text-center">
             <p className="font-bold">VS</p>
@@ -39,12 +45,12 @@ export const InfoCard = ({ data = {} }) => {
             <Avatar size="medium" type="rounded">
               <img src={pictureFormatter(data.away)} alt="" />
             </Avatar>
-            <p className="mt-2">{data.away?.name}</p>
+            <p className="mt-2">{data.away?.countryId}</p>
           </div>
         </div>
         <div className="info-card__bottom-actions">
           <p>GROUP A</p>
-          <p>{data.localDate}</p>
+          <p>{data.date}</p>
         </div>
       </div>
     </Card>

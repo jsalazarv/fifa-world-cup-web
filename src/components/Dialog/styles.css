@@ -1,0 +1,5 @@
+.dialog {
+    @apply z-10;
+    @apply inset-0;
+    @apply overflow-y-auto;
+}
