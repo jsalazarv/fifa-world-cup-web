@@ -20,6 +20,7 @@ export const Home = () => {
   useEffect(() => {
     getMatches();
   }, []);
+
   return (
     <div className="home">
       {games.map((game, index) => (
