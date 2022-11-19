@@ -1,0 +1,5 @@
+.auth {
+    @apply min-h-screen;
+    @apply grid;
+    @apply items-center;
+}
